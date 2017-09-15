@@ -29,7 +29,6 @@ export class ApiService {
     public get(url: string, options?: RequestOptionsArgs): Observable<Response> {
         url = this.apiUrl + url;
         options = this.appendApiHeaders(options);
-        console.log(url);
         return this.http.get(url, options);
     }
 

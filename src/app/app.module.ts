@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './components/app/app.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
-import { ApiService } from './services/api.service';
-import { OEventService } from './services/oevent.service';
 import { EventResultsCardComponent } from './components/event-results-card/event-results-card.component';
+import { PenocSdkModule } from './../penoc-sdk/penoc-sdk.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +14,10 @@ import { EventResultsCardComponent } from './components/event-results-card/event
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    PenocSdkModule.forRoot()
   ],
   providers: [
-    ApiService,
-    OEventService
   ],
   bootstrap: [AppComponent]
 })
