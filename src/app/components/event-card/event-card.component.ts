@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OEventService } from '../../services/oevent.service';
-import { OEventModel } from '../../models/OEvent.model';
+import { OEventService } from '../../../penoc-sdk/services/oevent.service';
+import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
 
 @Component({
   moduleId: module.id,
