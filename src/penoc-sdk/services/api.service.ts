@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptionsArgs, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ApiService {
     private apiUrl: string;
     private token: any;
-    public authenticated: boolean = false;
+    public authenticated = false;
 
     public constructor(public http: Http) {
         if (location.host.toLowerCase().startsWith('localhost')) {
