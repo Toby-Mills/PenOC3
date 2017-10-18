@@ -5,12 +5,14 @@ import { AppComponent } from './components/app/app.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { EventResultsCardComponent } from './components/event-results-card/event-results-card.component';
 import { PenocSdkModule } from './../penoc-sdk/penoc-sdk.module';
+import { EventCardListComponent } from './components/event-card-list/event-card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventCardComponent,
     EventResultsCardComponent,
+    EventCardListComponent,
   ],
   imports: [
     BrowserModule,
