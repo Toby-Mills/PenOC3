@@ -1,8 +1,5 @@
-<p>
-  event-card works!!!
-  <button (click)="getEvent();">click me </button>
-  <span *ngIf="oevent">
-  {{oevent.name}}
-  
-  </span>
-</p>
+<div *ngIf="oevent" class="card">
+  <span class="card-title">{{oevent.name}}</span><br>
+  {{oevent.date | dateString:'dd MMM yy'}}<br>
+  {{oevent.venue}}
+</div>
