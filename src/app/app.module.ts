@@ -6,6 +6,7 @@ import { EventCardComponent } from './components/event-card/event-card.component
 import { EventResultsCardComponent } from './components/event-results-card/event-results-card.component';
 import { PenocSdkModule } from './../penoc-sdk/penoc-sdk.module';
 import { EventCardListComponent } from './components/event-card-list/event-card-list.component';
+import { DateStringPipe } from './pipes/date.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { EventCardListComponent } from './components/event-card-list/event-card-
     EventCardComponent,
     EventResultsCardComponent,
     EventCardListComponent,
+    DateStringPipe
   ],
   imports: [
     BrowserModule,
