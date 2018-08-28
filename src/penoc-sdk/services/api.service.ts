@@ -10,7 +10,7 @@ export class ApiService {
 //comment test
     public constructor(public http: Http) {
         if (location.host.toLowerCase().startsWith('localhost')) {
-            this.apiUrl = 'http://localhost/penoc2/api';
+            this.apiUrl = 'http://localhost/penoc/api';
         } else {
             this.apiUrl = 'http://www.penoc.org.za/api';
         }
@@ -28,6 +28,7 @@ export class ApiService {
 
     public get(url: string, options?: RequestOptionsArgs): Observable<Response> {
         url = this.apiUrl + url;
+        console.log(url);
         options = this.appendApiHeaders(options);
         return this.http.get(url, options);
     }
