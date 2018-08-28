@@ -20,7 +20,7 @@
                              "whatis"
                              "calendar"
                              "content";
-        grid-template-columns: 100%;
+        grid-template-columns: 100vw;
         grid-template-rows: 75px
                             minmax(100px,200px)
                             auto
@@ -30,7 +30,13 @@
 
 .grid-item-header {
     grid-area: header;
-    background-color: red;
+    background-color: white;
+}
+.grid-item-header #club-full-name, .grid-item-header #club-abreviation {
+    font-size: 2.5em;
+}
+.grid-item-header #club-abreviation{
+    font-weight: 700;
 }
 
 .grid-item-whatis {
