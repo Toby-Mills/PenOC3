@@ -9,6 +9,7 @@ import { EventCardListComponent } from './components/event-card-list/event-card-
 import { DateStringPipe } from './pipes/date.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     EventResultsCardComponent,
     EventCardListComponent,
     DateStringPipe,
-    CalendarComponent
+    CalendarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
