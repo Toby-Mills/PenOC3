@@ -1,10 +1,10 @@
-
 .grid-item-header {
     grid-area: header;
     background-color: white;
 }
 .grid-item-header #club-full-name, .grid-item-header #club-abreviation {
     font-size: 2.5em;
+    margin-left: 20px;
 }
 .grid-item-header #club-abreviation{
     font-weight: 700;

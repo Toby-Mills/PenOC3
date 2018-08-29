@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin:0px;
+    overflow-x: hidden;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
 }
 
 h1 {

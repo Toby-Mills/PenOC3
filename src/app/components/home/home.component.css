@@ -17,24 +17,29 @@
                              "calendar"
                              "content";
         grid-template-columns: 100vw;
-        grid-template-rows: 75px
-                            minmax(100px,200px)
-                            auto
+        grid-template-rows: auto
                             auto;
     }
+}
+
+.grid-container div {
+    margin: 0px;
 }
 
 .grid-item-whatis {
     grid-area: whatis;
     background-color: blue;
+    padding: 0px 15px 15px 15px;
+
 }
 
 .grid-item-calendar {
     grid-area: calendar;
-    padding:0px 15px 0px 15px;
+    padding: 0px 30px 15px 15px;
 }
 
 .grid-item-content {
     grid-area: content;
     background-color: yellow;
+    padding: 0px 15px 15px 15px;
 }
