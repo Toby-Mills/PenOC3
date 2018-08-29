@@ -9,3 +9,21 @@
 .grid-item-header #club-abreviation{
     font-weight: 700;
 }
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
