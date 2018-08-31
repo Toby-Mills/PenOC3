@@ -1,0 +1,89 @@
+table {
+    border-collapse: separate
+}
+
+th {
+    vertical-align: bottom
+}
+
+th, td {
+    border: 1px solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: top
+}
+
+.no-touch tr, .no-touch th, .no-touch td, .no-touch colgroup {
+    transition: background .5s,border-color .5s
+}
+
+thead tr:nth-child(2) {
+    font-size: .8em
+}
+
+thead tr {
+    background-color: rgba(255,255,255,0)
+}
+
+    thead tr th {
+        border-color: rgba(255,255,255,0)
+    }
+
+    thead tr:first-child th {
+        border-top-color: #78a3b9
+    }
+
+    thead tr:last-child th {
+        border-bottom-color: #78a3b9
+    }
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9
+}
+
+    tbody tr:nth-child(odd) td {
+        border-color: #f9f9f9
+    }
+
+tbody tr:nth-child(even) {
+    background-color: #f1f6f8
+}
+
+    tbody tr:nth-child(even) td {
+        border-color: #f1f6f8
+    }
+
+tbody tr.highlight td {
+    border-color: #78a3b9;
+    border-left-color: #bed4df;
+    border-right-color: #bed4df;
+    background: #bed4df
+}
+
+tbody tr.selected td {
+    background-color: #f7f6c9;
+    border-top-color: #eae770;
+    border-bottom-color: #eae770;
+    border-left-color: #f7f6c9;
+    border-right-color: #f7f6c9
+}
+
+tbody td.selected {
+    background-color: #f7f6c9;
+    border-color: #eae770
+}
+
+colgroup.highlight {
+    background: #f1f6f8
+}
+
+td.number, th.number {
+    text-align: right
+}
+
+th.date, td.date {
+    text-align: right;
+    white-space: nowrap
+}

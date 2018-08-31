@@ -10,21 +10,3 @@ body {
 h1 {
     font-size: calc(12pt + 1vw);
 }
-
-.card {
-    padding: 15px;
-    background-color: #EEEEEE;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0,0,0,.2);
-    margin: 15px;
-}
-
-.card-title {
-    font-size: 1.3em;
-    font-variant: small-caps;
-    font-weight: 700;
-}
-
-.card-list {
-    margin: -15px;
-}

@@ -19,7 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "penoc",
       "styles": [
-        "styles.css"
+        "app/styles/styles.css",
+        "app/styles/tables.css",
+        "app/styles/cards.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
