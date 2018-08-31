@@ -1,3 +1,22 @@
-<p>
-  event-results-card works!
-</p>
+<div *ngIf="eventResultSummary" class="card">
+    <span class="card-title">{{eventResultSummary.OEvent.name}}</span><br>
+    {{eventResultSummary.OEvent.date | dateString:'dd MMM yy'}}<br>
+    {{eventResultSummary.OEvent.venue}}
+    <table>
+      <thead>
+          <tr>
+              <th>Course</th>
+              <th>Winner</th>
+              <th>Time</th>
+            </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let course of eventResultSummary.courseResults">
+              <td>{{course.course.name}}</td>
+              <td>{{course.topResults[0].competitor}}</td>
+              <td>{{course.topResults[0].time}}</td>
+            </tr>
+      </tbody>
+    </table>
+
+  </div>
