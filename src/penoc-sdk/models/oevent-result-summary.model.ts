@@ -3,5 +3,5 @@ import { OEventModel } from './oevent.model';
 
 export class OEventResultSummaryModel{
     OEvent: OEventModel;
-    courses: CourseResultSummaryModel[];
+    courseResults: CourseResultSummaryModel[];
 }
