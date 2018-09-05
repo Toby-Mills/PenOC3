@@ -11,19 +11,10 @@ import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-resul
 export class EventResultsCardComponent implements OnInit {
   @Input() oeventSummary: OEventResultSummaryModel;
 
-  public eventResultSummary: OEventResultSummaryModel;
-
-  constructor(public oEventService: OEventService) {
+  constructor() {
    }
 
   ngOnInit() {
-    this.oEventService.getOEventResultSummary(666)
-    .then(data => {
-      data.subscribe(response => {
-        this.eventResultSummary = response.json()[0];
-        console.log(this.eventResultSummary);
-      });
-    });
   }
 
 }
