@@ -1,5 +1,6 @@
 <div *ngIf="oevent" class="card">
-  <span class="card-title">{{oevent.name}}</span><br>
-  {{oevent.date | dateString:'dd MMM yy'}}<br>
+  <div class="card-title">{{oevent.name}}</div>
+  <div class="card-date">{{oevent.date | dateString:'dd MMM yy'}}</div>
+  <div class="clear-fix"></div>
   {{oevent.venue}}
 </div>
