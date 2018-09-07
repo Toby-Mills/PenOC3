@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'penoc-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dev';
+  public showMenu: boolean = false;
+
+  private menuClick(){
+    this.showMenu = !this.showMenu;
+  }
+
+  public constructor(private router: Router){
+    router.events.subscribe((val) => {
+      // see also 
+      this.showMenu = false; 
+  })
+  }
 }
