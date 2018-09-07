@@ -28,9 +28,7 @@
 
 .grid-item-whatis {
     grid-area: whatis;
-    background-color: blue;
     padding: 0px 15px 15px 15px;
-
 }
 
 .grid-item-calendar {
@@ -40,6 +38,5 @@
 
 .grid-item-content {
     grid-area: content;
-    background-color: yellow;
     padding: 0px 15px 15px 15px;
 }

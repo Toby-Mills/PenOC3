@@ -1,16 +1,16 @@
 <div class='grid-container'>
   <div class='grid-item-whatis'>
-    <h1>What is This about?</h1>
-    An exciting outdoor adventure sport which involves walking or running whilst navigating around a course using a detailed map and sometimes a compass.
-    The aim is to navigate between a set of control points, deciding on the best route to complete the course in the quickest time.
-    It does not matter how young, old or fit you are - you can run, walk or jog the course and progress at your own pace.
-    read more...
+    <penoc-what-is></penoc-what-is>
+    <penoc-about-the-club></penoc-about-the-club>
   </div>
   <div class='grid-item-calendar'>
-  <h1>Coming Events</h1>
-  <penoc-event-card-list></penoc-event-card-list>
+    <h1>Coming Events</h1>
+    <penoc-event-card-list></penoc-event-card-list>
   </div>
   <div class='grid-item-content'>
-  <h1>News</h1>
+    <h1>News</h1>
+    <div *ngFor="let oevent of recentOEventResults">
+      <penoc-event-results-card [oeventSummary]='oevent'></penoc-event-results-card>
+    </div>
   </div>
 </div>
