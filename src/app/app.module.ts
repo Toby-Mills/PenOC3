@@ -11,6 +11,8 @@ import { ResultTimePipe } from './pipes/result-time.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { HomeComponent } from './components/home/home.component';
+import { WhatIsComponent } from './components/what-is/what-is.component';
+import { AboutTheClubComponent } from './components/about-the-club/about-the-club.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeComponent } from './components/home/home.component';
     DateStringPipe,
     ResultTimePipe,
     CalendarComponent,
-    HomeComponent
+    HomeComponent,
+    WhatIsComponent,
+    AboutTheClubComponent
   ],
   imports: [
     BrowserModule,
