@@ -77,14 +77,18 @@ nav ul li a.router-link-active{
 
 .menu-icon {
     display: none;
-    margin: 0.5em 0 0 0.5em;
+    margin: 2px 0 0 6px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
 }
 
 .menu-icon-bar{
-    width: 2em;
-    height: 0.2em;
+    width: 30px;
+    height: 4px;
     background-color: white;
-    margin: 0.3em 2px;
+    margin: 4px 2px 0px 2px;
     border-radius: 0.5em;
     transition:  height .8s ease-in-out, transform .8s ease-in-out, background-color .8s;  
 }
@@ -153,4 +157,13 @@ nav a.menu-icon {
     .grid-item-menu{
         height: 100vh;
     }
+}
+@media screen and (max-width: 600px){
+    
+    .menu-icon-bar{
+        height: 3px;
+        margin: 3px 2px 0 4px;
+        width: 20px;
+    }
+
 }
