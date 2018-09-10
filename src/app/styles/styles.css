@@ -6,7 +6,7 @@ body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
     font-weight: 400;
     text-rendering: optimizeLegibility;
-    font-size: calc(8pt + 0.3vw);
+    font-size: 12pt;
 }
 
 h1 {
@@ -15,4 +15,20 @@ h1 {
 
 .clear-fix{
     clear: both;
+}
+
+@media screen and (max-width: 1200px) {
+    body{font-size: 14pt;}
+}
+
+@media screen and (max-width: 1000px) {
+    body{font-size: 12pt;}
+}
+
+@media screen and (max-width: 800px) {
+    body{font-size: 10pt;}
+}
+
+@media screen and (max-width: 600px) {
+    body{font-size: 8pt;}
 }
