@@ -25,3 +25,8 @@
 .card-list {
     margin: -15px;
 }
+
+.card-clickable:hover {
+    box-shadow: 0 1px 5px rgba(0,0,0,.7);
+    cursor: pointer;
+}
