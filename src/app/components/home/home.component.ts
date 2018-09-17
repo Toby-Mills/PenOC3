@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OEventService } from '../../../penoc-sdk/services/oevent.service';
 import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
 import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-result-summary.model';
+import { ModalManagerService } from '../../services/modal-manager.service';
 
 @Component({
   selector: 'penoc-home',
@@ -10,8 +12,9 @@ import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-resul
 })
 export class HomeComponent implements OnInit { 
   public recentOEventResults: (OEventResultSummaryModel)[] = []; 
-  
-  constructor(public oEventService: OEventService) { }
+  private oeventNotice: OEventModel;
+
+  constructor(public router: Router, public oEventService: OEventService, public modalManagerService: ModalManagerService) { }
 
   ngOnInit() {
     var firstDate: Date = new Date()
@@ -38,4 +41,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  private calendarEventClick(oevent: OEventModel){
+    this.router.navigate(['/event-notices', oevent.id]);
+  }
 }

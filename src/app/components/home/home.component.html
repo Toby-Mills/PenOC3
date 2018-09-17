@@ -5,7 +5,7 @@
   </div>
   <div class='grid-item-calendar'>
     <h1>Coming Events</h1>
-    <penoc-event-card-list></penoc-event-card-list>
+    <penoc-event-card-list (select)='calendarEventClick($event)'></penoc-event-card-list>
   </div>
   <div class='grid-item-content'>
     <h1>News</h1>
