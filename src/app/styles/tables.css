@@ -3,13 +3,14 @@ table {
 }
 
 th {
+    text-align: left;
     vertical-align: bottom
 }
 
 th, td {
     border: 1px solid;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     padding-left: 10px;
     padding-right: 10px;
     vertical-align: top
@@ -27,33 +28,33 @@ thead tr {
     background-color: rgba(255,255,255,0)
 }
 
-    thead tr th {
-        border-color: rgba(255,255,255,0)
-    }
+thead tr th {
+    border-color: rgba(255,255,255,0)
+}
 
-    thead tr:first-child th {
-        border-top-color: #78a3b9
-    }
+thead tr:first-child th {
+    border-top-color: #78a3b9
+}
 
-    thead tr:last-child th {
-        border-bottom-color: #78a3b9
-    }
+thead tr:last-child th {
+    border-bottom-color: #78a3b9
+}
 
 tbody tr:nth-child(odd) {
     background-color: #f9f9f9
 }
 
-    tbody tr:nth-child(odd) td {
-        border-color: #f9f9f9
-    }
+tbody tr:nth-child(odd) td {
+    border-color: #f9f9f9
+}
 
 tbody tr:nth-child(even) {
     background-color: #f1f6f8
 }
 
-    tbody tr:nth-child(even) td {
-        border-color: #f1f6f8
-    }
+tbody tr:nth-child(even) td {
+    border-color: #f1f6f8
+}
 
 tbody tr.highlight td {
     border-color: #78a3b9;
