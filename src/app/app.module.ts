@@ -13,6 +13,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { HomeComponent } from './components/home/home.component';
 import { WhatIsComponent } from './components/what-is/what-is.component';
 import { AboutTheClubComponent } from './components/about-the-club/about-the-club.component';
+import { EventNoticeComponent } from './components/event-notice/event-notice.component';
+import { ModalManagerService } from './services/modal-manager.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AboutTheClubComponent } from './components/about-the-club/about-the-clu
     CalendarComponent,
     HomeComponent,
     WhatIsComponent,
-    AboutTheClubComponent
+    AboutTheClubComponent,
+    EventNoticeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { AboutTheClubComponent } from './components/about-the-club/about-the-clu
     AppRoutingModule
   ],
   providers: [
+    ModalManagerService
   ],
   bootstrap: [AppComponent]
 })
