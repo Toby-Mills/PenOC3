@@ -44,4 +44,9 @@ export class HomeComponent implements OnInit {
   private calendarEventClick(oevent: OEventModel){
     this.router.navigate(['/event-notices', oevent.id]);
   }
+
+  private eventResultsClick(oevent: OEventResultSummaryModel){
+    this.router.navigate(['/event-results', oevent.OEvent.id]);
+  }
+
 }

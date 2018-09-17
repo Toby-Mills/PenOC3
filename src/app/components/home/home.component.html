@@ -9,8 +9,8 @@
   </div>
   <div class='grid-item-content'>
     <h1>News</h1>
-    <div *ngFor="let oevent of recentOEventResults">
-      <penoc-event-results-card [oeventSummary]='oevent'></penoc-event-results-card>
-    </div>
+    <div *ngFor="let oEventResultSummary of recentOEventResults">
+      <penoc-event-results-card [oeventSummary]='oEventResultSummary' (select)="eventResultsClick($event)"></penoc-event-results-card>
+  </div>
   </div>
 </div>
