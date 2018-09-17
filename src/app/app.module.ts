@@ -15,6 +15,7 @@ import { WhatIsComponent } from './components/what-is/what-is.component';
 import { AboutTheClubComponent } from './components/about-the-club/about-the-club.component';
 import { EventNoticeComponent } from './components/event-notice/event-notice.component';
 import { ModalManagerService } from './services/modal-manager.service';
+import { EventResultsComponent } from './components/event-results/event-results.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ModalManagerService } from './services/modal-manager.service';
     HomeComponent,
     WhatIsComponent,
     AboutTheClubComponent,
-    EventNoticeComponent
+    EventNoticeComponent,
+    EventResultsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OEventService } from '../../../penoc-sdk/services/oevent.service';
 import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-result-summary.model';
 
@@ -10,11 +10,17 @@ import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-resul
 })
 export class EventResultsCardComponent implements OnInit {
   @Input() oeventSummary: OEventResultSummaryModel;
+  @Output() select:EventEmitter<OEventResultSummaryModel> = new EventEmitter();
 
   constructor() {
    }
 
   ngOnInit() {
+  }
+
+  private cardClick(){
+    console.log(this.oeventSummary);
+    this.select.next(this.oeventSummary);
   }
 
 }
