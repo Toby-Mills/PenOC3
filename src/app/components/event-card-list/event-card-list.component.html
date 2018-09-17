@@ -1,5 +1,5 @@
 <div *ngIf="eventList" class="card-list">
-  <div *ngFor="let event of eventList">
-    <penoc-event-card [oevent]='event'></penoc-event-card>
+  <div *ngFor="let oevent of eventList">
+    <penoc-event-card [oevent]='oevent' (select)='cardClick(oevent)'></penoc-event-card>
   </div>
 </div>

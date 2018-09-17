@@ -1,4 +1,4 @@
-<div *ngIf="oevent" class="card">
+<div *ngIf="oevent" class="card card-clickable" (click)="cardClick()">
   <div class="card-title">{{oevent.name}}</div>
   <div class="card-date">{{oevent.date | dateString:'dd MMM yy'}}</div>
   <div class="clear-fix"></div>
