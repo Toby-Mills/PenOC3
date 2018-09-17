@@ -11,6 +11,10 @@
     transition: .8s;
 }
 
+.grid-container.modal-open{
+    overflow: hidden;
+}
+
 .grid-item-header {
     grid-area: header;
     color: white;

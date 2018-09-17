@@ -1,4 +1,4 @@
-<div class="grid-container"  [class.show-menu]="showMenu">
+<div class="grid-container"  [class.show-menu]="showMenu" [class.modal-open]="this.modalManagerService.modalOpen">
   <div class="menu-icon" (click)="menuClick()"><div id="bar-top" class="menu-icon-bar"></div><div id="bar-middle" class="menu-icon-bar"></div><div id="bar-bottom" class="menu-icon-bar"></div></div>
   <div class='grid-item-header'>
     <div><span id='club-abreviation'>PenOC</span></div><div><span id='club-full-name'>Peninusla Orienteering Club</span></div>
