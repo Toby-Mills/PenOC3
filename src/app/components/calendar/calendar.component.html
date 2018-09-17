@@ -1,3 +1,5 @@
-<p>
-  calendar works!
-</p>
+<div *ngIf="oevents">
+  <div *ngFor="let oevent of oevents">
+    <penoc-event-card [oevent]="oevent"></penoc-event-card>
+  </div>
+</div>
