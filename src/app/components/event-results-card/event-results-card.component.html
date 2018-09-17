@@ -1,4 +1,4 @@
-<div id="card" class="card">
+<div id="card" class="card card-clickable" (click)="cardClick()">
   <div class="card-title">Results: {{oeventSummary.OEvent.name}}</div>
   <div class="card-date">{{oeventSummary.OEvent.date | dateString:'dd MMM yy'}}</div> 
   <div class="clear-fix"></div>  
