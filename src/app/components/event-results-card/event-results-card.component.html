@@ -1,8 +1,8 @@
 <div id="card" class="card card-clickable" (click)="cardClick()">
-  <div class="card-title">Results: {{oeventSummary.OEvent.name}}</div>
-  <div class="card-date">{{oeventSummary.OEvent.date | dateString:'dd MMM yy'}}</div> 
+  <div class="card-title">Results: {{oeventSummary.oEvent.name}}</div>
+  <div class="card-date">{{oeventSummary.oEvent.date | dateString:'dd MMM yy'}}</div> 
   <div class="clear-fix"></div>  
-  <span>{{oeventSummary.OEvent.venue}}</span>
+  <span>{{oeventSummary.oEvent.venue}}</span>
   <div class="clearfix"></div>
   <table *ngIf="oeventSummary.courseResults.length > 0">
     <thead>
