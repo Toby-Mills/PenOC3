@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   }
 
   private eventResultsClick(oevent: OEventResultSummaryModel){
-    this.router.navigate(['/event-results', oevent.OEvent.id]);
+    this.router.navigate(['/event-results', oevent.oEvent.id]);
   }
 
 }
