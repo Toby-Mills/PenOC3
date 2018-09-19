@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
-import { OEventService } from '../../../penoc-sdk/services/oevent.service';
+import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
+import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
 
 @Component({
   selector: 'penoc-event-notice',

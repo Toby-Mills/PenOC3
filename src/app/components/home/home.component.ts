@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OEventService } from '../../../penoc-sdk/services/oevent.service';
-import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
-import { OEventResultSummaryModel } from '../../../penoc-sdk/models/oevent-result-summary.model';
+import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
+import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
+import { OEventResultSummaryModel } from '../../../../node_modules/penoc-sdk/models/oevent-result-summary.model';
 import { ModalManagerService } from '../../services/modal-manager.service';
 
 @Component({

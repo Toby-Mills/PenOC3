@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
-import { OEventService } from '../../../penoc-sdk/services/oevent.service';
+import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
+import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
 
 @Component({
   selector: 'penoc-calendar',

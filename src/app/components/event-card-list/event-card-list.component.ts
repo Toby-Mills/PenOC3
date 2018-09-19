@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Response } from '@angular/http';
-import { OEventService } from '../../../penoc-sdk/services/oevent.service';
-import { OEventModel } from '../../../penoc-sdk/models/oevent.model';
+import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
+import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
 
 @Component({
   selector: 'penoc-event-card-list',
