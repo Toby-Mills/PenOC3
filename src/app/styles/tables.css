@@ -1,5 +1,5 @@
 table {
-    border-collapse: separate
+    border-collapse: collapse;
 }
 
 th {
@@ -9,6 +9,8 @@ th {
 
 th, td {
     border: 1px solid;
+    border-left: none;
+    border-right: none;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 10px;

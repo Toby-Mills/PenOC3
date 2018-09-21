@@ -40,7 +40,7 @@
     grid-area: menu;
     height: 100%;
     overflow-x: hidden;
-    background-color: white;
+    background-color: #EEEEEE;
 }
 
 nav {
@@ -139,7 +139,7 @@ nav a.menu-icon {
     grid-template-columns: 0px 100%;
             grid-column-gap: 5px;
             grid-row-gap: 2px;
-            grid-template-rows: minmax(auto, 100px) 100%;
+            grid-template-rows: auto 100%;
             grid-template-areas: 
                 "menu header"
                 "menu content";
