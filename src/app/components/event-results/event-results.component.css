@@ -1,0 +1,26 @@
+#container {
+    padding: 10px;
+}
+
+#event-name {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+#event-venue {
+    font-size: 1.2em;
+    font-weight:600;
+}
+
+#event-date {
+    font-size: 1.2em;
+}
+
+span#course-name {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+tr.dsq {
+    background-color: rgb(252, 133, 133);
+}

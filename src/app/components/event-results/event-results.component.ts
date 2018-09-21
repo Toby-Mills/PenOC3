@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
+import { OEventResultSummaryModel } from '../../../../node_modules/penoc-sdk/models/oevent-result-summary.model';
 import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
 
 @Component({
@@ -9,19 +9,22 @@ import { OEventService } from '../../../../node_modules/penoc-sdk/services/oeven
   styleUrls: ['./event-results.component.css']
 })
 export class EventResultsComponent implements OnInit {
-  private oevent:OEventModel;
-  private subscription: any;
+  private oeventResults:OEventResultSummaryModel;
+
   constructor(private route:ActivatedRoute, private oeventService: OEventService) { }
 
   ngOnInit() {
-    this.subscription = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       let id = params['id'];
-      this.oeventService.getOEvent(id).then(obs => {
-        obs.subscribe(data => {
-          this.oevent = data.json()[0];
-        })
+      this.loadEvent(id);
+      })
+    }
+
+  private loadEvent(oeventId: any){
+    this.oeventService.getOEventResultSummary(oeventId).then(obs => {
+      obs.subscribe(data => {
+        this.oeventResults = data.json()[0];
       })
     })
   }
-
 }

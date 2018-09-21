@@ -14,10 +14,10 @@
     </thead>
     <tbody>
       <ng-container *ngFor="let courseResultSummary of oeventSummary.courseResults">
-        <tr  *ngIf="courseResultSummary.topResults.length > 0">
+        <tr  *ngIf="courseResultSummary.results.length > 0">
           <td>{{courseResultSummary.course.name}}</td>
-          <td>{{courseResultSummary.topResults[0].competitor}}</td>
-          <td class="date">{{courseResultSummary.topResults[0].time | resultTime}}</td>
+          <td>{{courseResultSummary.results[0].competitor}}</td>
+          <td class="date">{{courseResultSummary.results[0].time | resultTime}}</td>
         </tr>
       </ng-container> 
     </tbody>

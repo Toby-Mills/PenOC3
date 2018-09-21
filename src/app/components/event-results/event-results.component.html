@@ -1,1 +1,44 @@
-{{oevent.name}}
+<div *ngIf='oeventResults' id='container'>
+    <div id='event-name'>Event Results: {{oeventResults.oEvent.name}}</div>
+    <div id='event-venue'>{{oeventResults.oEvent.venue}}</div>
+    <div id='event-date'>{{oeventResults.oEvent.date | dateString}}</div>
+    <div *ngIf='oeventResults.oEvent.plannerReport' id='planner-report'>
+        <p>Report</p>
+        <p [innerHTML]="oeventResults.oEvent.plannerReport"></p></div>
+    <div id='controller-report' [innerHTML]="oeventResults.oEvent.controllerReport"></div>
+    <p>Results</p>
+    <div *ngFor="let courseResults of oeventResults.courseResults">
+        <div>
+            <span id='course-name'>{{courseResults.course.name}}</span> (
+                <span *ngIf='courseResults.course.length > 0'>{{courseResults.course.length}}m, </span>
+                <span *ngIf='courseResults.course.climb > 0'> {{courseResults.course.climb}}m climb, </span>
+                <span *ngIf='courseResults.course.controls > 0'>{{courseResults.course.controls}} controls, </span>
+                <span *ngIf='courseResults.course.difficulty > ""'>{{courseResults.course.difficulty}})</span>
+        </div>
+        <table *ngIf="courseResults.results.length > 0">
+            <thead>
+              <tr>
+                <th class="number">Pos.</th>
+                <th>Competitor</th>
+                <th class="date">Time</th>
+                <th class="number">Points</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let result of courseResults.results">
+                <tr [class.dsq]="result.disqualified">
+                  <td class="number"><span *ngIf="result.disqualified==false; else dsq">{{result.position}}</span>
+                    <ng-template #dsq>DSQ</ng-template>
+                </td>
+                  <td>{{result.competitor}}</td>
+                  <td class="date">{{result.time | resultTime}}</td>
+                  <td class="number">{{result.points}}</td>
+                  <td>{{result.comment}}</td>
+                </tr>
+              </ng-container> 
+            </tbody>
+          </table>
+          <br>
+    </div>
+</div>
