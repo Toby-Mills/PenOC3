@@ -22,9 +22,9 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
+    "penoc-sdk": "git+https://github.com/Toby-Mills/PenocSDK.git",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14",
-    "penoc-sdk": "git+https://github.com/Toby-Mills/PenocSDK"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.3.2",
