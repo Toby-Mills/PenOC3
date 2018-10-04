@@ -1,4 +1,37 @@
-<div *ngIf="oevent" class="container">
-  <h1>{{oevent.name}}</h1>
-  {{oevent.venue}}
+<div *ngIf="oevent">
+  <div id='header'>
+    <div id='event-name'>Event Notice: {{oevent.name}}</div>
+    <div id='event-venue' *ngIf="oevent.venue >'';else noDetails">{{oevent.venue}}</div>
+    <div id='event-date'>{{oevent.date | dateString}}</div>
+  </div>
+  <div *ngIf="oevent" class="grid-container">
+    <div *ngIf="oevent.specialNote > ''" class='section'>  <span class='section-header'>Notes:</span>
+      <hr>
+      <p id='event-courses' [innerHTML]="oevent.specialNote"></p>
+    </div>
+    <div  class='section'>
+      <span class='section-header'>Courses:</span>
+      <hr>
+      <p id='event-courses' *ngIf="oevent.courses >'';else noDetails" [innerHTML]="oevent.courses"></p>
+    </div>
+    <div  class='section'>
+      <span class='section-header'>Cost:</span>
+      <hr>
+      <p id='event-cost' *ngIf="oevent.cost >'';else noDetails" [innerHTML]="oevent.cost"></p>
+    </div>
+      <div  class='section'>
+      <span class='section-header'>Times:</span>
+      <hr>
+      Registration: <span id='event-registration' *ngIf="oevent.registration >'';else noDetails"[innerHTML]="oevent.registrationTime"></span><br>
+      Starts: <span id='event-registration' *ngIf="oevent.startTime >'';else noDetails" [innerHTML]="oevent.startTime"></span><br>
+      Courses Close: <span id='event-registration' *ngIf="oevent.closeTime >'';else noDetails" [innerHTML]="oevent.closeTime"></span>
+    </div>
+    <div  class='section'>
+      <span class='section-header'>Directions:</span>
+      <hr>
+      <p id='event-directions' *ngIf="oevent.directions >'';else noDetails" [innerHTML]="oevent.directions"></p>
+    </div>
+  </div>
 </div>
+
+<ng-template #noDetails>No details yet...</ng-template>
