@@ -18,11 +18,11 @@ h1 {
 }
 
 @media screen and (max-width: 1200px) {
-    body{font-size: 14pt;}
+    body{font-size: 12pt;}
 }
 
 @media screen and (max-width: 1000px) {
-    body{font-size: 12pt;}
+    body{font-size: 11pt;}
 }
 
 @media screen and (max-width: 600px) {
