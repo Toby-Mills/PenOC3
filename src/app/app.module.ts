@@ -16,6 +16,7 @@ import { AboutTheClubComponent } from './components/about-the-club/about-the-clu
 import { EventNoticeComponent } from './components/event-notice/event-notice.component';
 import { ModalManagerService } from './services/modal-manager.service';
 import { EventResultsComponent } from './components/event-results/event-results.component';
+import { CourseDistancePipe } from './pipes/course-distance.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EventResultsComponent } from './components/event-results/event-results.
     WhatIsComponent,
     AboutTheClubComponent,
     EventNoticeComponent,
-    EventResultsComponent
+    EventResultsComponent,
+    CourseDistancePipe
   ],
   imports: [
     BrowserModule,
