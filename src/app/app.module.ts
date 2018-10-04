@@ -17,6 +17,8 @@ import { EventNoticeComponent } from './components/event-notice/event-notice.com
 import { ModalManagerService } from './services/modal-manager.service';
 import { EventResultsComponent } from './components/event-results/event-results.component';
 import { CourseDistancePipe } from './pipes/course-distance.pipe';
+import { NewsItemComponent } from './components/news-item/news-item.component';
+import { NewsItemCardComponent } from './components/news-item-card/news-item-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CourseDistancePipe } from './pipes/course-distance.pipe';
     AboutTheClubComponent,
     EventNoticeComponent,
     EventResultsComponent,
-    CourseDistancePipe
+    CourseDistancePipe,
+    NewsItemComponent,
+    NewsItemCardComponent
   ],
   imports: [
     BrowserModule,
