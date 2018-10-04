@@ -2,6 +2,32 @@
     padding: 10px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 50% 50%;
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+        grid-template-areas: 
+    "header header"
+    "results report";
+}
+
+#grid-item-report {
+    grid-area: report;
+    padding: 20px 50px 20px 50px;
+}
+
+#grid-item-results {
+    grid-area: results;
+    padding: 20px 50px 20px 50px;
+}
+
+#grid-item-header {
+    grid-area: header;
+    padding-left: 50px;
+}
+
 #event-name {
     font-size: 1.8em;
     font-weight: 700;
@@ -21,6 +47,24 @@ span#course-name {
     font-weight: 700;
 }
 
+.result-table {
+    width: 100%;
+}
+
 tr.dsq {
-    background-color: rgb(252, 133, 133);
+    background-color: rgb(252, 172, 172);
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 100%;
+            grid-column-gap: 5px;
+            grid-template-areas: 
+        "header"
+        "report"
+        "results";
+    }
 }
