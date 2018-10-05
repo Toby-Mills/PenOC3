@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
-import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
-import { OEventResultSummaryModel } from '../../../../node_modules/penoc-sdk/models/oevent-result-summary.model';
+import { OEventService } from 'penoc-sdk/services/oevent.service';
+import { OEventModel } from 'penoc-sdk/models/oevent.model';
+import { OEventResultSummaryModel } from 'penoc-sdk/models/oevent-result-summary.model';
 import { ModalManagerService } from '../../services/modal-manager.service';
 
 @Component({
@@ -19,24 +19,20 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     var firstDate: Date = new Date()
     firstDate.setFullYear(firstDate.getFullYear() -4);
-    this.oEventService.getOEvent(null,null,null, firstDate, new Date() ).then(data => {
-      data.subscribe(response => {
-        this.loadEventResults(response.json());
-      });
-    })
+    this.oEventService.getOEvent(null,null,null, firstDate, new Date() ).subscribe(response => {
+      this.loadEventResults(response.json());
+    });
   }
 
   private loadEventResults(eventList: OEventModel[]){
     if (eventList.length > 0){
       var oevent = eventList.pop();
-      this.oEventService.getOEventResultSummary(oevent.id).then(data =>{
-        data.subscribe(response => {
-          var eventResultSummary: OEventResultSummaryModel;
-          eventResultSummary = response.json()[0];
-          if (eventResultSummary.courseResults.length > 0){
-            this.recentOEventResults.push(response.json()[0]);}
-          this.loadEventResults(eventList);
-        })
+      this.oEventService.getOEventResultSummary(oevent.id).subscribe(response => {
+        var eventResultSummary: OEventResultSummaryModel;
+        eventResultSummary = response.json()[0];
+        if (eventResultSummary.courseResults.length > 0){
+          this.recentOEventResults.push(response.json()[0]);}
+        this.loadEventResults(eventList);
       })
     }
   }

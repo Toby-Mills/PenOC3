@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
-import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
+import { OEventModel } from 'penoc-sdk/models/oevent.model';
+import { OEventService } from 'penoc-sdk/services/oevent.service';
 
 @Component({
   selector: 'penoc-event-notice',
@@ -17,10 +17,8 @@ export class EventNoticeComponent implements OnInit {
   ngOnInit() {
     this.subscription = this.route.params.subscribe(params => {
       let id = params['id'];
-      this.oeventService.getOEvent(id).then(obs => {
-        obs.subscribe(data => {
-          this.oevent = data.json()[0];
-        })
+      this.oeventService.getOEvent(id).subscribe(data => {
+        this.oevent = data.json()[0];
       })
     })
   }

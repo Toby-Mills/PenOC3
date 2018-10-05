@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NewsModel } from '../../../../node_modules/penoc-sdk/models/news.model'
+import { NewsModel } from 'penoc-sdk/models/news.model'
 @Component({
   selector: 'penoc-news-item-card',
   templateUrl: './news-item-card.component.html',

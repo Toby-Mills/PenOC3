@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OEventModel } from '../../../../node_modules/penoc-sdk/models/oevent.model';
-import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
+import { OEventModel } from 'penoc-sdk/models/oevent.model';
+import { OEventService } from 'penoc-sdk/services/oevent.service';
 
 @Component({
   selector: 'penoc-calendar',
@@ -15,10 +15,8 @@ private oevents: OEventModel[];
   }
 
   ngOnInit() {
-    this.oeventService.getOEvent(null, null, null, new Date(), null).then(data => {
-      data.subscribe(response =>{
-        this.oevents = response.json();
-      })
+    this.oeventService.getOEvent(null, null, null, new Date(), null).subscribe(response =>{
+      this.oevents = response.json();
     })
   }
 

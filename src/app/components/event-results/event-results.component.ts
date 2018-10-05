@@ -1,7 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OEventResultSummaryModel } from '../../../../node_modules/penoc-sdk/models/oevent-result-summary.model';
-import { OEventService } from '../../../../node_modules/penoc-sdk/services/oevent.service';
+import { OEventResultSummaryModel } from 'penoc-sdk/models/oevent-result-summary.model';
+import { OEventService } from 'penoc-sdk/services/oevent.service';
 
 @Component({
   selector: 'penoc-event-results',
@@ -21,10 +21,8 @@ export class EventResultsComponent implements OnInit {
     }
 
   private loadEvent(oeventId: any){
-    this.oeventService.getOEventResultSummary(oeventId).then(obs => {
-      obs.subscribe(data => {
-        this.oeventResults = data.json()[0];
-      })
+    this.oeventService.getOEventResultSummary(oeventId).subscribe(data => {
+      this.oeventResults = data.json()[0];
     })
   }
 }
