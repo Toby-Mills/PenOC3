@@ -21,8 +21,8 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
 import { NewsItemCardComponent } from './components/news-item-card/news-item-card.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [ 
+    AppComponent, 
     EventCardComponent,
     EventResultsCardComponent,
     EventCardListComponent,

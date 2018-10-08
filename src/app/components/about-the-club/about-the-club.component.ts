@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'penoc-about-the-club',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-the-club.component.css']
 })
 export class AboutTheClubComponent implements OnInit {
+@Input() summary: boolean = false;
 
   constructor() { }
 

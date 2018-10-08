@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'penoc-what-is',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./what-is.component.css']
 })
 export class WhatIsComponent implements OnInit {
+@Input() summary: boolean = false;
 
   constructor() { }
 
