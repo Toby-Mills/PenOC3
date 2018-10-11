@@ -1,26 +1,31 @@
 <div id="card" class="card card-clickable" (click)="cardClick()">
   <div class="card-title">Results: {{oeventSummary.oEvent.name}}</div>
   <div class="card-date">{{oeventSummary.oEvent.date | dateString:'dd MMM yy'}}</div> 
-  <div class="clear-fix"></div>  
+  <div class="clear-fix"></div>
   <span>{{oeventSummary.oEvent.venue}}</span>
   <div class="clearfix"></div>
-  <table *ngIf="oeventSummary.courseResults.length > 0">
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th>Winner</th>
-        <th class="date">Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let courseResultSummary of oeventSummary.courseResults">
-        <tr  *ngIf="courseResultSummary.results.length > 0">
-          <td>{{courseResultSummary.course.name}}</td>
-          <td>{{courseResultSummary.results[0].competitor}}</td>
-          <td class="date">{{courseResultSummary.results[0].time | resultTime}}</td>
+  <br>
+  <div class="results">
+    <table *ngIf="oeventSummary.courseResults && oeventSummary.courseResults.length > 0">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Winner</th>
+          <th class="date">Time</th>
         </tr>
-      </ng-container> 
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let courseResultSummary of oeventSummary.courseResults">
+          <tr  *ngIf="courseResultSummary.results.length > 0">
+            <td>{{courseResultSummary.course.name}}</td>
+            <td>{{courseResultSummary.results[0].competitor}}</td>
+            <td class="date">{{courseResultSummary.results[0].time | resultTime}}</td>
+          </tr>
+        </ng-container> 
+      </tbody>
+    </table>
   </div>
+  <div class="report">
+      <p [innerHTML]="oeventSummary.oEvent.plannerReport"></p>
+  </div>
+</div>
