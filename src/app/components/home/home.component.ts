@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { OEventService } from 'penoc-sdk/services/oevent.service';
 import { OEventModel } from 'penoc-sdk/models/oevent.model';
 import { OEventResultSummaryModel } from 'penoc-sdk/models/oevent-result-summary.model';
-import { ModalManagerService } from '../../services/modal-manager.service';
+import { NewsService } from 'penoc-sdk/services/news.service';
 
 @Component({
   selector: 'penoc-home',
@@ -11,30 +11,103 @@ import { ModalManagerService } from '../../services/modal-manager.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit { 
-  public recentOEventResults: (OEventResultSummaryModel)[] = []; 
-  private oeventNotice: OEventModel;
+  private cardData: (any)[] = []; 
+  private yearsLoaded: number = 0;
 
-  constructor(public router: Router, public oEventService: OEventService, public modalManagerService: ModalManagerService) { }
+  constructor(public router: Router, public oEventService: OEventService, public newsService: NewsService) { }
 
   ngOnInit() {
-    var firstDate: Date = new Date()
-    firstDate.setFullYear(firstDate.getFullYear() -4);
-    this.oEventService.getOEvent(null,null,null, firstDate, new Date() ).subscribe(response => {
-      this.loadEventResults(response.json());
-    });
+    window.addEventListener('scroll', this.createScrollHandler(this), true);
+    this.loadMoreCardData(2);
+  }
+
+  private createScrollHandler(thisControl): ()=>void{
+    //event handler to implement infinte scroll as user approaches bottom of page
+    //implemented as a closure to ensure access to 'this' (rather than the window) at run time
+    return function(){
+      if (document.body.scrollHeight - window.scrollY - window.innerHeight < 400){
+        thisControl.loadMoreCardData(1);
+      }
+    }
+  }
+
+  private loadMoreCardData(years: number){
+
+    var fromDate: Date = new Date()
+    var toDate: Date = new Date()
+    fromDate.setFullYear(fromDate.getFullYear() - (this.yearsLoaded + years));
+    toDate.setFullYear(toDate.getFullYear() - (this.yearsLoaded));
+
+    this.newsService.getNewsItems(null,fromDate, toDate).subscribe(response => {
+      this.cardData = this.cardData.concat(response.json());
+      this.sortCardData();
+      this.oEventService.getOEvent( null, null, null, fromDate, toDate).subscribe(response => {
+        this.addOEventResultSummaryCards(response.json());
+        this.sortCardData();
+        this.loadEventResults(response.json());
+      });
+    })
+    this.yearsLoaded = this.yearsLoaded + years;
   }
 
   private loadEventResults(eventList: OEventModel[]){
-    if (eventList.length > 0){
-      var oevent = eventList.pop();
+    eventList.forEach((oevent: OEventModel)=>{
       this.oEventService.getOEventResultSummary(oevent.id).subscribe(response => {
         var eventResultSummary: OEventResultSummaryModel;
         eventResultSummary = response.json()[0];
-        if (eventResultSummary.courseResults.length > 0){
-          this.recentOEventResults.push(response.json()[0]);}
-        this.loadEventResults(eventList);
+        let foundIndex = this.cardData.findIndex(function(element:OEventResultSummaryModel):boolean{
+          if(element.oEvent){
+            return (eventResultSummary.oEvent.id == element.oEvent.id);
+          }else{
+            return false;
+          }
+        });
+        var hasResults = this.oEventHasResults(eventResultSummary);
+        if(hasResults){
+          this.cardData[foundIndex] = eventResultSummary;
+        }else{
+          this.cardData.splice(foundIndex,1);
+        }
       })
-    }
+    })
+  }
+
+  private sortCardData(){
+
+    this.cardData.sort((a, b) =>{
+      var dateA: Date;
+      var dateB: Date;
+
+      dateA = a.date || a.oEvent.date;
+      dateB = b.date || b.oEvent.date;
+
+      if( dateA < dateB){
+        return 1;
+      }else if(dateA > dateB){
+        return -1;
+      }else{
+        return 0
+      }
+    })
+  }
+
+  private addOEventResultSummaryCards(eventList: OEventModel[]){
+    eventList.forEach((value: OEventModel, index: number)=>{
+      let resultSummary = new OEventResultSummaryModel();
+      resultSummary.oEvent = value;
+      this.cardData.push(resultSummary);
+    })
+  }
+
+  private oEventHasResults(oevent:OEventResultSummaryModel):boolean{
+    var hasResults: boolean =false;
+
+    oevent.courseResults.forEach(courseResult => {
+      if (courseResult.results.length > 0){
+        hasResults = true;
+      }
+    })
+    return hasResults;
   }
 
   private calendarEventClick(oevent: OEventModel){
@@ -44,5 +117,4 @@ export class HomeComponent implements OnInit {
   private eventResultsClick(oevent: OEventResultSummaryModel){
     this.router.navigate(['/event-results', oevent.oEvent.id]);
   }
-
 }
