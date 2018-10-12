@@ -1,0 +1,33 @@
+#container {
+    padding: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+        grid-column-gap: 5px;
+        grid-row-gap: 0px;
+        grid-template-areas: 
+    "header"
+    "body";
+}
+
+#grid-item-header {
+    grid-area: header;
+    padding-left: 50px;
+}
+
+#grid-item-body {
+    grid-area: body;
+    padding: 20px 50px 20px 50px;
+}
+
+#news-title {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+#news-date {
+    font-size: 1.2em;
+}

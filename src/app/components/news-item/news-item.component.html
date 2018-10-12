@@ -1,3 +1,7 @@
-<p>
-  news-item works!
-</p>
+<div *ngIf='newsItem' id='container' class='grid-container'>
+  <div id='grid-item-header'>
+      <div id='news-title'>{{newsItem.title}}</div>
+      <div id='news-date'>{{newsItem.date | dateString}}</div>
+  </div>
+  <div id='grid-item-body'><p [innerHTML]="newsItem.news"></p></div>
+</div>
