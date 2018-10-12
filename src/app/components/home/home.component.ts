@@ -4,6 +4,7 @@ import { OEventService } from 'penoc-sdk/services/oevent.service';
 import { OEventModel } from 'penoc-sdk/models/oevent.model';
 import { OEventResultSummaryModel } from 'penoc-sdk/models/oevent-result-summary.model';
 import { NewsService } from 'penoc-sdk/services/news.service';
+import { NewsModel } from 'penoc-sdk/models/news.model';
 
 @Component({
   selector: 'penoc-home',
@@ -12,13 +13,14 @@ import { NewsService } from 'penoc-sdk/services/news.service';
 })
 export class HomeComponent implements OnInit { 
   private cardData: (any)[] = []; 
-  private yearsLoaded: number = 0;
+  private yearsDataLoaded: number = 0;
 
   constructor(public router: Router, public oEventService: OEventService, public newsService: NewsService) { }
 
   ngOnInit() {
     window.addEventListener('scroll', this.createScrollHandler(this), true);
-    this.loadMoreCardData(2);
+    this.loadMoreCardData(1);
+    this.loadMoreCardData(1);
   }
 
   private createScrollHandler(thisControl): ()=>void{
@@ -31,12 +33,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private loadMoreCardData(years: number){
+  private loadMoreCardData(yearsToLoad: number){
 
     var fromDate: Date = new Date()
     var toDate: Date = new Date()
-    fromDate.setFullYear(fromDate.getFullYear() - (this.yearsLoaded + years));
-    toDate.setFullYear(toDate.getFullYear() - (this.yearsLoaded));
+    fromDate.setFullYear(fromDate.getFullYear() - (this.yearsDataLoaded + yearsToLoad));
+    toDate.setFullYear(toDate.getFullYear() - (this.yearsDataLoaded));
 
     this.newsService.getNewsItems(null,fromDate, toDate).subscribe(response => {
       this.cardData = this.cardData.concat(response.json());
@@ -47,7 +49,7 @@ export class HomeComponent implements OnInit {
         this.loadEventResults(response.json());
       });
     })
-    this.yearsLoaded = this.yearsLoaded + years;
+    this.yearsDataLoaded = this.yearsDataLoaded + yearsToLoad;
   }
 
   private loadEventResults(eventList: OEventModel[]){
@@ -116,5 +118,9 @@ export class HomeComponent implements OnInit {
 
   private eventResultsClick(oevent: OEventResultSummaryModel){
     this.router.navigate(['/event-results', oevent.oEvent.id]);
+  }
+
+  private newsClick(newsItem: NewsModel){
+    this.router.navigate(['/news', newsItem.id]);
   }
 }
