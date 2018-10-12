@@ -6,12 +6,14 @@ import { EventNoticeComponent } from './components/event-notice/event-notice.com
 import { EventResultsComponent } from './components/event-results/event-results.component';
 import { WhatIsComponent } from './components/what-is/what-is.component';
 import { AboutTheClubComponent } from './components/about-the-club/about-the-club.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'calendar', component: CalendarComponent},
   {path: 'event-notices/:id', component: EventNoticeComponent},
   {path: 'event-results/:id', component: EventResultsComponent},
+  {path: 'news/:id', component: NewsItemComponent},
   {path: 'what-is', component: WhatIsComponent},
   {path: 'about-the-club', component: AboutTheClubComponent}
 ]
