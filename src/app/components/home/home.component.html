@@ -4,8 +4,10 @@
     <penoc-what-is summary='true'></penoc-what-is>
   </div>
   <div class='grid-item-calendar'>
-    <h1>Upcoming Events</h1>
-    <penoc-event-card-list (select)='calendarEventClick($event)'></penoc-event-card-list>
+    <div id="upcoming-events">
+      <h1>Upcoming Events</h1>
+      <penoc-event-card-list (select)='calendarEventClick($event)'></penoc-event-card-list>
+    </div>
   </div>
   <div class='grid-item-content'>
     <h1>News</h1>

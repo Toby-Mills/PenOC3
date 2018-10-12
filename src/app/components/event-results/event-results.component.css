@@ -67,4 +67,17 @@ tr.dsq {
         "report"
         "results";
     }
+
+    #grid-item-header {
+        padding-left: 5px;
+    }
+
+    #grid-item-report {
+        padding: 20px 5px 2px 5px;
+    }
+    
+    #grid-item-results {
+        grid-area: results;
+        padding: 20px 5px 2px 5px;
+    }
 }

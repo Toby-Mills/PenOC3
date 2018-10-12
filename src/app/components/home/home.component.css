@@ -26,12 +26,10 @@
 
 .grid-item-whatis {
     grid-area: whatis;
-    padding: 0px 15px 15px 15px;
 }
 
 .grid-item-calendar {
     grid-area: calendar;
-    padding: 0px 30px 15px 15px;
 }
 
 .grid-item-content {
@@ -41,4 +39,8 @@
 
 .grid-item-content div {
     width: 100%;
+}
+
+#upcoming-events {
+    margin:20px;
 }
