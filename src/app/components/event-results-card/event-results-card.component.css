@@ -5,3 +5,7 @@
 .results, .report {
     width: 100%;
 }
+
+div.results-placeholder {
+    height: 100px;
+}

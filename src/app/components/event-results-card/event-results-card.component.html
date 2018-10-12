@@ -6,7 +6,7 @@
   <div class="clearfix"></div>
   <br>
   <div class="results">
-    <table *ngIf="oeventSummary.courseResults && oeventSummary.courseResults.length > 0">
+    <table *ngIf="oeventSummary.courseResults && oeventSummary.courseResults.length > 0; else results_placeholder">
       <thead>
         <tr>
           <th>Course</th>
@@ -24,6 +24,7 @@
         </ng-container> 
       </tbody>
     </table>
+    <ng-template #results_placeholder><div class="results-placeholder">loading results...</div></ng-template>
   </div>
   <div class="report">
       <p [innerHTML]="oeventSummary.oEvent.plannerReport"></p>
