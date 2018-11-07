@@ -19,6 +19,8 @@ import { EventResultsComponent } from './components/event-results/event-results.
 import { CourseDistancePipe } from './pipes/course-distance.pipe';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { NewsItemCardComponent } from './components/news-item-card/news-item-card.component';
+import { ResultsComponent } from './components/results/results.component';
+import { EventResultsCardListComponent } from './components/event-results-card-list/event-results-card-list.component';
 
 @NgModule({
   declarations: [ 
@@ -36,7 +38,9 @@ import { NewsItemCardComponent } from './components/news-item-card/news-item-car
     EventResultsComponent,
     CourseDistancePipe,
     NewsItemComponent,
-    NewsItemCardComponent
+    NewsItemCardComponent,
+    ResultsComponent,
+    EventResultsCardListComponent
   ],
   imports: [
     BrowserModule,
