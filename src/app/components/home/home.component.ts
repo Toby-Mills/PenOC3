@@ -54,8 +54,9 @@ export class HomeComponent implements OnInit {
 
   private loadEventResults(eventList: OEventModel[]){
     eventList.forEach((oevent: OEventModel)=>{
-      this.oEventService.getOEventResultSummary(oevent.id).subscribe(response => {
+      this.oEventService.getOEventResultSummary(oevent.id, 1).subscribe(response => {
         var eventResultSummary: OEventResultSummaryModel;
+        console.log(response.json()[0]);
         eventResultSummary = response.json()[0];
         let foundIndex = this.cardData.findIndex(function(element:OEventResultSummaryModel):boolean{
           if(element.oEvent){
@@ -112,15 +113,15 @@ export class HomeComponent implements OnInit {
     return hasResults;
   }
 
-  private calendarEventClick(oevent: OEventModel){
+  public calendarEventClick(oevent: OEventModel){
     this.router.navigate(['/event-notices', oevent.id]);
   }
 
-  private eventResultsClick(oevent: OEventResultSummaryModel){
+  public eventResultsClick(oevent: OEventResultSummaryModel){
     this.router.navigate(['/event-results', oevent.oEvent.id]);
   }
 
-  private newsClick(newsItem: NewsModel){
+  public newsClick(newsItem: NewsModel){
     this.router.navigate(['/news', newsItem.id]);
   }
 }
