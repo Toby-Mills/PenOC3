@@ -9,3 +9,10 @@
 div.results-placeholder {
     height: 100px;
 }
+
+span.organisers {
+    font-size: 0.9em;
+}
+span.organisers-label {
+    font-weight: 600;
+}

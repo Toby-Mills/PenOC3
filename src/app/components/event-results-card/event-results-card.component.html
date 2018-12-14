@@ -2,7 +2,8 @@
   <div class="card-title">Results: {{oeventSummary.oEvent.name}}</div>
   <div class="card-date">{{oeventSummary.oEvent.date | dateString:'dd MMM yy'}}</div> 
   <div class="clear-fix"></div>
-  <span>{{oeventSummary.oEvent.venue}}</span>
+  <span>{{oeventSummary.oEvent.venue}}</span><br>
+  <span *ngIf='oeventSummary.oEvent.planner || oeventSummary.oEvent.controller' class='organisers'><span class='organisers-label'>Organisers: </span><span *ngIf='oeventSummary.oEvent.planner' >{{oeventSummary.oEvent.planner}}</span><span *ngIf='oeventSummary.oEvent.controller' >{{', ' + oeventSummary.oEvent.controller}}</span></span>
   <div class="clearfix"></div>
   <br>
   <div class="results">
