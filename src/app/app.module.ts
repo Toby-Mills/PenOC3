@@ -22,6 +22,7 @@ import { NewsItemCardComponent } from './components/news-item-card/news-item-car
 import { ResultsComponent } from './components/results/results.component';
 import { EventResultsCardListComponent } from './components/event-results-card-list/event-results-card-list.component';
 import { EventFilterPipe } from './pipes/event-filter.pipe';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [ 
@@ -47,8 +48,8 @@ import { EventFilterPipe } from './pipes/event-filter.pipe';
   imports: [
     BrowserModule,
     HttpModule,
-    PenocSdkModule.forRoot(),
-    AppRoutingModule
+    PenocSdkModule.forRoot(environment),
+    AppRoutingModule,
   ],
   providers: [
     ModalManagerService,

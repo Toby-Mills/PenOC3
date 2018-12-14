@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  enquiriesEmail: 'info@penoc.org.za',
+  websiteEmail: 'website@penoc.org.za',
+  mailingListURL: 'https://penoc.us18.list-manage.com/subscribe/post?u=930cfaff6a9f183c90d5a414b&id=ac40b7f57f',
+  facebookURL: 'https://www.facebook.com/PeninsulaOrienteeringClub',
+  apiURL: 'http://localhost/penoc/api'
 };
