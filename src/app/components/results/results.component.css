@@ -1,0 +1,15 @@
+#search{
+    font-size: 1.6em;
+    color: grey;
+    padding:4px;
+    margin: 5px 50px 5px 50px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    width: calc(100% - 100px);
+
+}
+
+#search-string{
+    font-style: italic;
+    font-size: 1.1em;
+}

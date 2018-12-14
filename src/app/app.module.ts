@@ -21,6 +21,7 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
 import { NewsItemCardComponent } from './components/news-item-card/news-item-card.component';
 import { ResultsComponent } from './components/results/results.component';
 import { EventResultsCardListComponent } from './components/event-results-card-list/event-results-card-list.component';
+import { EventFilterPipe } from './pipes/event-filter.pipe';
 
 @NgModule({
   declarations: [ 
@@ -40,7 +41,8 @@ import { EventResultsCardListComponent } from './components/event-results-card-l
     NewsItemComponent,
     NewsItemCardComponent,
     ResultsComponent,
-    EventResultsCardListComponent
+    EventResultsCardListComponent,
+    EventFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -49,8 +51,10 @@ import { EventResultsCardListComponent } from './components/event-results-card-l
     AppRoutingModule
   ],
   providers: [
-    ModalManagerService
+    ModalManagerService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }

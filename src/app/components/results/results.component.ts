@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ResultService } from 'penoc-sdk/services/result.service';
+import { Router } from '@angular/router';
 import { OEventService } from 'penoc-sdk/services/oevent.service';
-import { OEventModel } from 'penoc-sdk/models/oevent.model';
+import { OEventResultSummaryModel } from 'penoc-sdk/models/oevent-result-summary.model';
+import { EventFilterPipe } from '../../pipes/event-filter.pipe';
 
 @Component({
   selector: 'penoc-results',
@@ -9,12 +10,17 @@ import { OEventModel } from 'penoc-sdk/models/oevent.model';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-public eventList: Array<OEventModel>;
+public eventList: Array<OEventResultSummaryModel>;
+public searchString: string = '';
 
-  constructor(public eventService:OEventService) { }
+  constructor(public router: Router, public eventService:OEventService) { }
 
   ngOnInit() {
-    this.eventService.getOEventResultSummaries(null, 'toby', null, null, null).subscribe(result => {this.eventList = result.json()});
+    this.eventService.getOEventResultSummaries(null, null, null, new Date(), 1).subscribe(result => {this.eventList = result.json(); console.log(this.eventList.length)});
   }
 
+  public eventResultsClick(oevent: OEventResultSummaryModel){
+    this.router.navigate(['/event-results', oevent.oEvent.id]);
+  }
+  
 }
