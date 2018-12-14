@@ -22,6 +22,7 @@ export class EventResultsComponent implements OnInit {
 
   private loadEvent(oeventId: any){
     this.oeventService.getOEventResultSummary(oeventId).subscribe(data => {
+      console.log(data.json()[0]);
       this.oeventResults = data.json()[0];
     })
   }
