@@ -11,8 +11,10 @@ export class EventFilterPipe implements PipeTransform {
     if(searchString.length < 3){return []}
     if(oevents){
       return oevents.filter(oeventSummary => {
-        if (oeventSummary.oEvent.name && oeventSummary.oEvent.name.toLowerCase().includes(search)){return true}
-        if (oeventSummary.oEvent.venue && oeventSummary.oEvent.venue.toLowerCase().includes(search)) { return true}
+        if (oeventSummary.oEvent.name && oeventSummary.oEvent.name.toLowerCase().includes(search)) { return true }
+        if (oeventSummary.oEvent.venue && oeventSummary.oEvent.venue.toLowerCase().includes(search)) { return true }
+        if (oeventSummary.oEvent.planner && oeventSummary.oEvent.planner.toLocaleLowerCase().includes(search)) { return true }
+        if (oeventSummary.oEvent.controller && oeventSummary.oEvent.controller.toLocaleLowerCase().includes(search)) { return true }
         return false;
       })
     }else{
