@@ -1,5 +1,7 @@
-<div *ngIf="oevents">
+<div *ngIf="oevents && oevents.length > 0;else no_events">
+  <span><a routerLink="/about-the-club">Subscribe to the mailing list</a> to be notified when new events are planned.</span>
   <div *ngFor="let oevent of oevents">
     <penoc-event-card [oevent]="oevent"></penoc-event-card>
   </div>
 </div>
+<ng-template #no_events>There are no events currently planned. Please check back later, or <a routerLink="/about-the-club">subscribe to the mailing list</a> to be notified when new events are planned.</ng-template>
