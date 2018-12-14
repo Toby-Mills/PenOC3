@@ -6,28 +6,30 @@
     <div *ngIf='!summary'>
         <h1>Get in touch with us</h1>
         <h2>General Enquires</h2>
-        info@penoc.org.za
+        <a target='_blank' href='mailto:{{env.enquiriesEmail}}'>{{env.enquiriesEmail}}</a>
         <h2>Mailing List</h2>
         To receive occassional emails with details of upcoming events, as well as results, join our mailing list.
-        Subscribe to List
+        <a target='_blank' href='{{env.mailingListURL}}'>Subscribe to List</a>
     <h2>Facebook</h2>
         Join in the discussion on Facebook:
-        www.facebook.com/PeninsulaOrienteeringClub
+<a target='_blank' href='{{env.facebookURL}}'>PenOC on Facebook</a>
     <h2>Membership</h2>
         To join the club, complete theMembership Form
         Subs can then be paid via EFT to the banking details below
     <h2>Banking Details</h2>
-        Payments such as membership subs can be paid to:
-        Bank
-        Standard Bank
-        Branch
-        051001 (Adderley Street)
-        Name
-        Peninsula Orienteering Club
-        Account No.
-        07 427 3566
+        Payments such as membership subs can be paid to:<br>
+        <div id='bank-details'> 
+            <span class='key'>Bank</span><br>
+            <span class='value'>Standard Bank</span><br>
+            <span class='key'>Branch</span><br>
+            <span class='value'>051001 (Adderley Street)</span><br>
+            <span class='key'>Name</span><br>
+            <span class='value'>Peninsula Orienteering Club</span><br>
+            <span class='key'>Account No.</span><br>
+            <span class='value'>07 427 3566</span>
+        </div>
     <h2>Website</h2>
         To report any problems with the website:
-        website@penoc.org.za    
+        <a target='_blank' href='mailto:{{env.websiteEmail}}'>{{env.websiteEmail}}</a>
     </div>
 </div>

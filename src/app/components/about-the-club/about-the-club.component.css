@@ -1,3 +1,13 @@
 #container {
     margin: 20px;
 }
+#bank-details {
+    display: inline-block;
+    background-color: bisque;
+    border: 1px solid #AAAAAA;
+    padding: 20px 50px 20px 30px;
+}
+#bank-details .key {
+    font-weight: 700;
+    font-size: 1.1em;
+}
