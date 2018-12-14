@@ -56,17 +56,15 @@ export class HomeComponent implements OnInit {
     eventList.forEach((oevent: OEventModel)=>{
       this.oEventService.getOEventResultSummary(oevent.id, 1).subscribe(response => {
         var eventResultSummary: OEventResultSummaryModel;
-        console.log(response.json()[0]);
         eventResultSummary = response.json()[0];
         let foundIndex = this.cardData.findIndex(function(element:OEventResultSummaryModel):boolean{
           if(element.oEvent){
-            return (eventResultSummary.oEvent.id == element.oEvent.id);
+            return (oevent.id == element.oEvent.id);
           }else{
             return false;
           }
         });
-        var hasResults = this.oEventHasResults(eventResultSummary);
-        if(hasResults){
+        if(eventResultSummary){
           this.cardData[foundIndex] = eventResultSummary;
         }else{
           this.cardData.splice(foundIndex,1);
@@ -100,17 +98,6 @@ export class HomeComponent implements OnInit {
       resultSummary.oEvent = value;
       this.cardData.push(resultSummary);
     })
-  }
-
-  private oEventHasResults(oevent:OEventResultSummaryModel):boolean{
-    var hasResults: boolean =false;
-
-    oevent.courseResults.forEach(courseResult => {
-      if (courseResult.results.length > 0){
-        hasResults = true;
-      }
-    })
-    return hasResults;
   }
 
   public calendarEventClick(oevent: OEventModel){
