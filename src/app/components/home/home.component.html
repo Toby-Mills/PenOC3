@@ -11,7 +11,7 @@
   </div>
   <div class='grid-item-content'>
     <h1>News</h1>
-    <div *ngFor="let card of cardData">
+    <div *ngFor="let card of homeService.cardData">
       <penoc-news-item-card *ngIf="card.title" [newsItem]='card' (select)="newsClick($event)"></penoc-news-item-card>
       <penoc-event-results-card *ngIf="card.oEvent" [oeventSummary]='card' (select)="eventResultsClick($event)"></penoc-event-results-card>
     </div>

@@ -24,6 +24,8 @@ import { EventResultsCardListComponent } from './components/event-results-card-l
 import { EventFilterPipe } from './pipes/event-filter.pipe';
 import { environment } from '../environments/environment';
 import { ResultsService } from './services/results.service';
+import { PermanentCoursesComponent } from './components/permanent-courses/permanent-courses.component';
+import { HomeService } from './services/home.service';
 
 @NgModule({
   declarations: [ 
@@ -55,6 +57,7 @@ import { ResultsService } from './services/results.service';
   ],
   providers: [
     ModalManagerService,
+    HomeService,
     ResultsService,
   ],
   bootstrap: [
