@@ -1,4 +1,4 @@
-<input id='search' type='text' placeholder=" search: event name, venue, organiser" [value]="searchString"
-(input)="searchString=$event.target.value" />
-<penoc-event-results-card-list [resultsList]="(eventList | eventFilter: searchString)" (select)="eventResultsClick($event)"></penoc-event-results-card-list>
-<div *ngIf='(eventList |  eventFilter: searchString).length == 0 && searchString.length > 2'>no search results for <span id='search-string'>'{{searchString}}'</span></div>
+<input id='search' type='text' placeholder=" search: event name, venue, organiser" [value]="resultsService.searchString"
+(input)="resultsService.searchString=$event.target.value" />
+<penoc-event-results-card-list [resultsList]="(eventList | eventFilter: resultsService.searchString)" (select)="eventResultsClick($event)"></penoc-event-results-card-list>
+<div *ngIf='(eventList |  eventFilter: resultsService.searchString).length == 0 && resultsService.searchString.length > 2'>no search results for <span id='search-string'>'{{resultsService.searchString}}'</span></div>

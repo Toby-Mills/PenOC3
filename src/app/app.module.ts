@@ -23,6 +23,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { EventResultsCardListComponent } from './components/event-results-card-list/event-results-card-list.component';
 import { EventFilterPipe } from './pipes/event-filter.pipe';
 import { environment } from '../environments/environment';
+import { ResultsService } from './services/results.service';
 
 @NgModule({
   declarations: [ 
@@ -53,6 +54,7 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     ModalManagerService,
+    ResultsService,
   ],
   bootstrap: [
     AppComponent,
