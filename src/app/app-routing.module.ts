@@ -8,16 +8,18 @@ import { WhatIsComponent } from './components/what-is/what-is.component';
 import { AboutTheClubComponent } from './components/about-the-club/about-the-club.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { ResultsComponent } from './components/results/results.component';
+import { PermanentCoursesComponent } from './components/permanent-courses/permanent-courses.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'calendar', component: CalendarComponent},
-  {path: 'event-notices/:id', component: EventNoticeComponent},
-  {path: 'event-results/:id', component: EventResultsComponent},
-  {path: 'results', component: ResultsComponent},
-  {path: 'news/:id', component: NewsItemComponent},
-  {path: 'what-is', component: WhatIsComponent},
-  {path: 'about-the-club', component: AboutTheClubComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'event-notices/:id', component: EventNoticeComponent },
+  { path: 'event-results/:id', component: EventResultsComponent },
+  { path: 'results', component: ResultsComponent },
+  { path: 'news/:id', component: NewsItemComponent },
+  { path: 'what-is', component: WhatIsComponent },
+  { path: 'about-the-club', component: AboutTheClubComponent },
+  { path: 'permanent-courses', component: PermanentCoursesComponent },
 ]
 
 @NgModule({

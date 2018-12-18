@@ -45,6 +45,7 @@ import { ResultsService } from './services/results.service';
     ResultsComponent,
     EventResultsCardListComponent,
     EventFilterPipe,
+    PermanentCoursesComponent,
   ],
   imports: [
     BrowserModule,
