@@ -13,12 +13,10 @@ export class ResultsComponent implements OnInit {
 public eventList: Array<OEventResultSummaryModel>;
 
   constructor(public router: Router, public eventService:OEventService, public resultsService:ResultsService) {
-    console.log(this.resultsService.searchString);
    }
 
   ngOnInit() {
     this.eventService.getOEventResultSummaries(null, null, null, new Date(), 1).subscribe(result => {this.eventList = result.json(); console.log(this.eventList.length)});
-    console.log(this.resultsService.searchString);
   }
 
   public eventResultsClick(oevent: OEventResultSummaryModel){
