@@ -1,6 +1,6 @@
-<div *ngIf="oevents && oevents.length > 0;else no_events">
+<div *ngIf="calendarService.oevents && calendarService.oevents.length > 0;else no_events">
   <span><a routerLink="/about-the-club">Subscribe to the mailing list</a> to be notified when new events are planned.</span>
-  <div *ngFor="let oevent of oevents">
+  <div *ngFor="let oevent of calendarService.oevents">
     <penoc-event-card [oevent]="oevent"></penoc-event-card>
   </div>
 </div>

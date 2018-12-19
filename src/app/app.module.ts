@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { ResultsService } from './services/results.service';
 import { PermanentCoursesComponent } from './components/permanent-courses/permanent-courses.component';
 import { HomeService } from './services/home.service';
+import { CalendarService } from './services/calendar.service';
 
 @NgModule({
   declarations: [ 
@@ -59,6 +60,7 @@ import { HomeService } from './services/home.service';
     ModalManagerService,
     HomeService,
     ResultsService,
+    CalendarService,
   ],
   bootstrap: [
     AppComponent,

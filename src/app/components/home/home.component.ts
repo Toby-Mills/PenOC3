@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
     var fromDate: Date = new Date()
     var toDate: Date = new Date()
+
     fromDate.setFullYear(fromDate.getFullYear() - (this.homeService.yearsDataLoaded + yearsToLoad));
     toDate.setFullYear(toDate.getFullYear() - (this.homeService.yearsDataLoaded));
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OEventModel } from 'penoc-sdk/models/oevent.model';
 import { OEventService } from 'penoc-sdk/services/oevent.service';
+import { CalendarService } from '../../services/calendar.service';
 
 @Component({
   selector: 'penoc-calendar',
@@ -8,16 +8,20 @@ import { OEventService } from 'penoc-sdk/services/oevent.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-private oevents: OEventModel[];
 
-  constructor(public oeventService: OEventService) { 
+
+  constructor(public oeventService: OEventService, public calendarService: CalendarService) { 
 
   }
 
   ngOnInit() {
-    this.oeventService.getOEvent(null, null, null, new Date(), null).subscribe(response =>{
-      this.oevents = response.json();
-    })
+    console.log(this.calendarService.oevents.length);
+    if(this.calendarService.oevents.length == 0){
+      console.log('load calendar');
+      this.oeventService.getOEvent(null, null, null, new Date(), null).subscribe(response =>{
+        this.calendarService.oevents = response.json();
+      })
+    }
   }
 
 }
