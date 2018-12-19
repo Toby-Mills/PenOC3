@@ -1,4 +1,4 @@
-#search{
+#search-input{
     font-size: 1.6em;
     color: grey;
     padding:4px;
@@ -9,7 +9,13 @@
 
 }
 
-#search-string{
+.search-summary{
+    font-size: 1.1em;
+    padding: 4px;
+    margin-left: 50px;
+}
+
+.search-string{
     font-style: italic;
     font-size: 1.1em;
 }
