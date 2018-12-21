@@ -1,5 +1,6 @@
 #container {
     padding: 10px;
+    background-color: #FFFFFF;
 }
 
 .grid-container {
@@ -16,6 +17,14 @@
 #grid-item-report {
     grid-area: report;
     padding: 20px 50px 20px 50px;
+}
+
+#grid-item-report p::first-line {
+    font-weight: 700;
+}
+
+#grid-item-report p::first-letter {
+    font-size: 1.3em;
 }
 
 #grid-item-results {
