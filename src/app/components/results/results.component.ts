@@ -10,13 +10,14 @@ import { ResultsService } from '../../services/results.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-public eventList: Array<OEventResultSummaryModel>;
 
-  constructor(public router: Router, public eventService:OEventService, public resultsService:ResultsService) {
+  constructor(public router: Router, public resultsService:ResultsService) {
    }
 
   ngOnInit() {
-    this.eventService.getOEventResultSummaries(null, null, null, new Date(), 1).subscribe(result => {this.eventList = result.json(); console.log(this.eventList.length)});
+    if (this.resultsService.resultSummaries.length === 0){
+      this.resultsService.loadResultSummaries();
+    }
   }
 
   public eventResultsClick(oevent: OEventResultSummaryModel){

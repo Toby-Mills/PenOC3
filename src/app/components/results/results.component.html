@@ -1,7 +1,7 @@
 <input id='search-input' type='text' placeholder=" search: event name, venue, organiser" [value]="resultsService.searchString"
 (input)="resultsService.searchString=$event.target.value" />
 
-<ng-container *ngIf="(eventList | eventFilter: resultsService.searchString)  as result">
+<ng-container *ngIf="(resultsService.resultSummaries | eventFilter: resultsService.searchString)  as result">
     <ng-container *ngIf="result.length > 0; else noResults">
         <span class='search-summary'>{{result.length}} events matching <span class='search-string'>'{{resultsService.searchString}}'</span></span>
         <penoc-event-results-card-list [resultsList]="result" (select)="eventResultsClick($event)"></penoc-event-results-card-list>
