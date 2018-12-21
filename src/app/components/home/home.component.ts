@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (this.homeService.yearsDataLoaded == 0){
-      this.loadMoreCardData(1);
-      this.loadMoreCardData(1);
+      this.homeService.loadMoreCardData(1);
+      this.homeService.loadMoreCardData(1);
     }
     window.addEventListener('scroll', this.createScrollHandler(this), true);
   }
@@ -34,73 +34,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private loadMoreCardData(yearsToLoad: number){
-
-    var fromDate: Date = new Date()
-    var toDate: Date = new Date()
-
-    fromDate.setFullYear(fromDate.getFullYear() - (this.homeService.yearsDataLoaded + yearsToLoad));
-    toDate.setFullYear(toDate.getFullYear() - (this.homeService.yearsDataLoaded));
-
-    this.newsService.getNewsItems(null,fromDate, toDate).subscribe(response => {
-      this.homeService.cardData = this.homeService.cardData.concat(response.json());
-      this.sortCardData();
-      this.oEventService.getOEvent( null, null, null, fromDate, toDate).subscribe(response => {
-        this.addOEventResultSummaryCards(response.json());
-        this.sortCardData();
-        this.loadEventResults(response.json());
-      });
-    })
-    this.homeService.yearsDataLoaded = this.homeService.yearsDataLoaded + yearsToLoad;
-  }
-
-  private loadEventResults(eventList: OEventModel[]){
-    eventList.forEach((oevent: OEventModel)=>{
-      this.oEventService.getOEventResultSummary(oevent.id, 1).subscribe(response => {
-        var eventResultSummary: OEventResultSummaryModel;
-        eventResultSummary = response.json()[0];
-        let foundIndex = this.homeService.cardData.findIndex(function(element:OEventResultSummaryModel):boolean{
-          if(element.oEvent){
-            return (oevent.id == element.oEvent.id);
-          }else{
-            return false;
-          }
-        });
-        if(eventResultSummary){
-          this.homeService.cardData[foundIndex] = eventResultSummary;
-        }else{
-          this.homeService.cardData.splice(foundIndex,1);
-        }
-      })
-    })
-  }
-
-  private sortCardData(){
-
-    this.homeService.cardData.sort((a, b) =>{
-      var dateA: Date;
-      var dateB: Date;
-
-      dateA = a.date || a.oEvent.date;
-      dateB = b.date || b.oEvent.date;
-
-      if( dateA < dateB){
-        return 1;
-      }else if(dateA > dateB){
-        return -1;
-      }else{
-        return 0
-      }
-    })
-  }
-
-  private addOEventResultSummaryCards(eventList: OEventModel[]){
-    eventList.forEach((value: OEventModel, index: number)=>{
-      let resultSummary = new OEventResultSummaryModel();
-      resultSummary.oEvent = value;
-      this.homeService.cardData.push(resultSummary);
-    })
-  }
+  
 
   public calendarEventClick(oevent: OEventModel){
     this.router.navigate(['/event-notices', oevent.id]);
