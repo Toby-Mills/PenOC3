@@ -11,6 +11,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { PermanentCoursesComponent } from './components/permanent-courses/permanent-courses.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'event-notices/:id', component: EventNoticeComponent },
