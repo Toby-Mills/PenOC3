@@ -9,7 +9,6 @@ import { CalendarService } from '../../services/calendar.service';
 })
 export class CalendarComponent implements OnInit {
 
-
   constructor(public oeventService: OEventService, public calendarService: CalendarService) { 
 
   }

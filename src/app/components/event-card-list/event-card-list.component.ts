@@ -9,8 +9,8 @@ import { OEventModel } from 'penoc-sdk/models/oevent.model';
 })
 export class EventCardListComponent implements OnInit {
 
-  private eventList: Array<OEventModel>;
-  private loading: boolean = false;
+  public eventList: Array<OEventModel>;
+  public loading: boolean = false;
   @Output() select:EventEmitter<OEventModel> = new EventEmitter();
 
   constructor(private oEventService: OEventService) { }

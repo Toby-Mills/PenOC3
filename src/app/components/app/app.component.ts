@@ -10,11 +10,11 @@ import { ModalManagerService } from '../../services/modal-manager.service';
 export class AppComponent {
   public showMenu: boolean = false;
 
-  private menuClick(){
+  public menuClick(){
     this.showMenu = !this.showMenu;
   }
 
-  public constructor(private router: Router, private modalManagerService:ModalManagerService){
+  public constructor(private router: Router, public modalManagerService:ModalManagerService){
     router.events.subscribe((val) => {
       // see also 
       this.showMenu = false; 

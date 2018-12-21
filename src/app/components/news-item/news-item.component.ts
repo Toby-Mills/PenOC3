@@ -9,7 +9,7 @@ import { NewsService } from 'penoc-sdk/services/news.service';
   styleUrls: ['./news-item.component.css']
 })
 export class NewsItemComponent implements OnInit {
-private newsItem: NewsModel;
+public newsItem: NewsModel;
 
   constructor(private route:ActivatedRoute, private newsService: NewsService) { }
 

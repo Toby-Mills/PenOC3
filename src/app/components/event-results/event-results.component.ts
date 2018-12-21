@@ -9,7 +9,7 @@ import { OEventService } from 'penoc-sdk/services/oevent.service';
   styleUrls: ['./event-results.component.css']
 })
 export class EventResultsComponent implements OnInit {
-  private oeventResults:OEventResultSummaryModel;
+  public oeventResults:OEventResultSummaryModel;
 
   constructor(private route:ActivatedRoute, private oeventService: OEventService) { }
 

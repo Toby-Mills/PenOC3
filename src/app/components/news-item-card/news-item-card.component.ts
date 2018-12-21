@@ -13,7 +13,7 @@ export class NewsItemCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  private cardClick(){
+  public cardClick(){
     this.select.next(this.newsItem);
   }
 }

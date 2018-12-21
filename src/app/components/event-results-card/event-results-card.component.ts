@@ -17,7 +17,7 @@ export class EventResultsCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  private cardClick(){
+  public cardClick(){
     this.select.next(this.oeventSummary);
   }
 
