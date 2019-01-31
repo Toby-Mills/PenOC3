@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { ApplicationConfigurationService } from '../../services/application-configuration.service';
 
 @Component({
   selector: 'penoc-about-the-club',
@@ -7,13 +7,13 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./about-the-club.component.css']
 })
 export class AboutTheClubComponent implements OnInit {
-@Input() summary: boolean = false;
-private env = environment;
+  @Input() summary: boolean = false;
+  private configuration;
 
-  constructor() { }
+  constructor(private configurationService: ApplicationConfigurationService) { }
 
   ngOnInit() {
-
+    this.configuration = this.configurationService.Configuration();
   }
 
 }

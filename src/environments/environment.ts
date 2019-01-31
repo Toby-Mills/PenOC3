@@ -5,9 +5,5 @@
 
 export const environment = {
   production: false,
-  enquiriesEmail: 'info@penoc.org.za',
-  websiteEmail: 'website@penoc.org.za',
-  mailingListURL: 'https://penoc.us18.list-manage.com/subscribe/post?u=930cfaff6a9f183c90d5a414b&id=ac40b7f57f',
-  facebookURL: 'https://www.facebook.com/PeninsulaOrienteeringClub',
   apiURL: 'http://localhost/penoc/api'
 };

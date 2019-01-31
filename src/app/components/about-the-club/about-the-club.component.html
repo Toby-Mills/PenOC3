@@ -6,13 +6,13 @@
     <div *ngIf='!summary'>
         <h1>Get in touch with us</h1>
         <h2>General Enquires</h2>
-        <a target='_blank' href='mailto:{{env.enquiriesEmail}}'>{{env.enquiriesEmail}}</a>
+        <a target='_blank' href='mailto:{{configuration.enquiriesEmail}}'>{{configuration.enquiriesEmail}}</a>
         <h2>Mailing List</h2>
         To receive occassional emails with details of upcoming events, as well as results, join our mailing list.
-        <a target='_blank' href='{{env.mailingListURL}}'>Subscribe to List</a>
+        <a target='_blank' href='{{configuration.mailingListURL}}'>Subscribe to List</a>
     <h2>Facebook</h2>
         Join in the discussion on Facebook:
-<a target='_blank' href='{{env.facebookURL}}'>PenOC on Facebook</a>
+<a target='_blank' href='{{configuration.facebookURL}}'>PenOC on Facebook</a>
     <h2>Membership</h2>
         To join the club, complete theMembership Form
         Subs can then be paid via EFT to the banking details below
@@ -30,6 +30,6 @@
         </div>
     <h2>Website</h2>
         To report any problems with the website:
-        <a target='_blank' href='mailto:{{env.websiteEmail}}'>{{env.websiteEmail}}</a>
+        <a target='_blank' href='mailto:{{configuration.websiteEmail}}'>{{configuration.websiteEmail}}</a>
     </div>
 </div>

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './components/app/app.component';
+import { ApplicationConfigurationService } from './services/application-configuration.service';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { EventResultsCardComponent } from './components/event-results-card/event-results-card.component';
 import { PenocSdkModule } from 'penoc-sdk/penoc-sdk.module';
@@ -27,6 +28,13 @@ import { ResultsService } from './services/results.service';
 import { PermanentCoursesComponent } from './components/permanent-courses/permanent-courses.component';
 import { HomeService } from './services/home.service';
 import { CalendarService } from './services/calendar.service';
+
+export
+const appInitializer = (appConfig:ApplicationConfigurationService) => {
+  return() => {
+    return appConfig.loadApplicationConfiguration();
+  }
+}
 
 @NgModule({
   declarations: [ 
@@ -57,6 +65,13 @@ import { CalendarService } from './services/calendar.service';
     AppRoutingModule,
   ],
   providers: [
+    ApplicationConfigurationService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializer,
+      multi: true,
+      deps: [ApplicationConfigurationService]
+    },
     ModalManagerService,
     HomeService,
     ResultsService,
