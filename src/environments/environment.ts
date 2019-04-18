@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost/penoc/api'
+  apiURL: 'http://localhost/penoc/api',
+  googleMapsApiKey: 'AIzaSyAmEW1_BqJn7vc9kblUnVEKRBRonLKDnpw',
+
 };
